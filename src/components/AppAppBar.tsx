@@ -28,13 +28,13 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     padding: '8px 12px',
     alignItems: 'center',
 
-    backdropFilter: 'blur(24px)',
+    backdropFilter: 'blur(10px)',
     justifyContent: 'space-between',
     borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
 
-    boxShadow: (theme.cssVariables || theme).shadows[1],
+    boxShadow: (theme.cssVariables || theme).shadows[0],
     borderColor: (theme.cssVariables || theme).palette.divider,
-    backgroundColor: alpha(theme.palette.background.default, 0.4),
+    backgroundColor: alpha(theme.palette.background.default, 0.5),
 }));
 
 export default function AppAppBar() {
@@ -61,10 +61,12 @@ export default function AppAppBar() {
                         <Sitemark />
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Button variant="text" color="info" size="small">
-                                Features
+                                {/* Features */}
+                                Bob Calculator
                             </Button>
                             <Button variant="text" color="info" size="small">
-                                Testimonials
+                                {/* Testimonials */}
+                                Locations
                             </Button>
                             <Button variant="text" color="info" size="small">
                                 Highlights
@@ -73,7 +75,7 @@ export default function AppAppBar() {
                                 Pricing
                             </Button>
                             <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                                FAQ
+                                FAQs
                             </Button>
                             <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
                                 Blog

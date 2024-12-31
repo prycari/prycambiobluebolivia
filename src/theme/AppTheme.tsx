@@ -28,8 +28,8 @@ export default function AppTheme(props: AppThemeProps) {
             : createTheme({
                 // For more details about CSS variables configuration, see https://mui.com/material-ui/customization/css-theme-variables/configuration/
                 cssVariables: {
-                    colorSchemeSelector: 'data-mui-color-scheme',
                     cssVarPrefix: 'template',
+                    colorSchemeSelector: 'data-mui-color-scheme',
                 },
                 colorSchemes, // Recently added in v6 for building light & dark mode app, see https://mui.com/material-ui/customization/palette/#color-schemes
                 typography,
@@ -49,8 +49,10 @@ export default function AppTheme(props: AppThemeProps) {
         return <React.Fragment>{children}</React.Fragment>;
     }
     return (
-        <ThemeProvider theme={theme} disableTransitionOnChange>
-            {children}
-        </ThemeProvider>
+        <>
+            <ThemeProvider theme={theme} disableTransitionOnChange>
+                {children}
+            </ThemeProvider>
+        </>
     );
 }

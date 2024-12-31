@@ -381,11 +381,7 @@ export const inputsCustomizations: Components<Theme> = {
     },
     MuiOutlinedInput: {
         styleOverrides: {
-            input: {
-                padding: 0,
-            },
             root: ({ theme }) => ({
-                padding: '8px 12px',
                 color: (theme.cssVariables || theme).palette.text.primary,
                 borderRadius: (theme.cssVariables || theme).shape.borderRadius,
                 border: `1px solid ${(theme.cssVariables || theme).palette.divider}`,
@@ -403,24 +399,6 @@ export const inputsCustomizations: Components<Theme> = {
                         borderColor: gray[500],
                     },
                 }),
-                variants: [
-                    {
-                        props: {
-                            size: 'small',
-                        },
-                        style: {
-                            height: '2.25rem',
-                        },
-                    },
-                    {
-                        props: {
-                            size: 'medium',
-                        },
-                        style: {
-                            height: '2.5rem',
-                        },
-                    },
-                ],
             }),
             notchedOutline: {
                 border: 'none',
