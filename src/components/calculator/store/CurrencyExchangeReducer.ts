@@ -29,7 +29,12 @@ export const {
             const fromAmount = state.from.amount
 
             if (state.from.code !== fromCode) {
+                const title = document.getElementById('title')
                 const fromCurrency = currencies[fromCode as CurrencyCode]
+
+                if (title) {
+                    title.innerHTML = `CambioBlueBolivia ${fromCode} TO ${state.to.code}`
+                }
 
                 state.from = {
                     ...fromCurrency,

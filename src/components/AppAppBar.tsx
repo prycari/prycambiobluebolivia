@@ -66,7 +66,6 @@ export function AppAppBar() {
                     >
                         <ColorModeIconDropdown />
                     </Box>
-
                     <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
                         <ColorModeIconDropdown size="medium" />
                     </Box>

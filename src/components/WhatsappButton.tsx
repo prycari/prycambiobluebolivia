@@ -21,9 +21,10 @@ export const WhatsappButton: FC<WhatsappButtonProps> = ({
 
     return (
         <Button
-            variant="contained"
+            variant='contained'
             onClick={handleClick}
             className="flex items-center"
+            color={props.disabled ? 'error' : 'primary'}
             {...props}
         >
             {children}

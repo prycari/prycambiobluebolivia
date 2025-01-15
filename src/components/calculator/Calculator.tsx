@@ -195,14 +195,14 @@ export const Calculator = React.forwardRef((_props, ref) => {
                                             <Button
                                                 className='mx-3'
                                                 color='secondary'
-                                                variant='contained'
+                                                variant='text'
                                                 onClick={currencyExchange.refetch}
                                             >
                                                 Recalculate
                                             </Button>
                                             <WhatsappButton
                                                 phoneNumber='41772241120'
-                                                disabled={!exchangeRateDate}
+                                                disabled={!exchangeRateDate || (from.amount ?? 0) < 100}
                                                 message={`¡Hola buenas!\nQuiero cambiar *${getUsaFormat(from.amount!)} ${fromCode}*.\nA tipo de cambio *${getUsaFormat(exchangeRate)} ${fromCode}/${to.code}*.\n(actualizado el _${exchangeRateDate.toLocaleString()}_).`}
                                             >
                                                 Contact Us
