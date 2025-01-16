@@ -21,6 +21,7 @@ export const WhatsappButton: FC<WhatsappButtonProps> = ({
 
     return (
         <Button
+            disableElevation
             variant='contained'
             onClick={handleClick}
             className="flex items-center"

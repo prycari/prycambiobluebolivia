@@ -32,6 +32,7 @@ import { DefaultCurrency } from '../selectCurrency/DefaultCurrency';
 import { useCurrencyExchange } from './hooks/useCurrencyExchange';
 import { NonBobCurrencyCode } from './dtos/EurobobExchangeRateResponse';
 
+const contactNumber = import.meta.env.VITE_CONTACT_NUMBER;
 const getUsaFormat = (value: number) => new Intl.NumberFormat('en-US', {
     style: 'decimal',
     minimumFractionDigits: 2,
@@ -120,7 +121,7 @@ export const Calculator = React.forwardRef((_props, ref) => {
                                     >
                                         <Grid component={'div'} size={{ xs: 12, md: 5 }}>
                                             <InputLabel className='font-semibold'>
-                                                Amount
+                                                Monto
                                             </InputLabel>
                                             <NumericFormat
                                                 fullWidth
@@ -149,7 +150,7 @@ export const Calculator = React.forwardRef((_props, ref) => {
                                         </Grid>
                                         <Grid component={'div'} size={{ xs: 12, md: 5 }}>
                                             <InputLabel className='font-semibold'>
-                                                Converted to
+                                                Convertido a
                                             </InputLabel>
                                             <NumericFormat
                                                 fullWidth
@@ -179,7 +180,7 @@ export const Calculator = React.forwardRef((_props, ref) => {
                                                 {getUsaFormat(1)} {fromCode} = {exchangeRate.toFixed(5)} {to.code}
                                             </Typography>
                                             <Typography variant="caption" color="text.secondary">
-                                                {from.name} to {to.name} at <br />
+                                                {from.name} a {to.name}<br />
                                                 <Link href="#" color="primary">
                                                     <Show when={!!currencyExchange.time}>
                                                         {exchangeRateDate.toLocaleString()}
@@ -193,19 +194,19 @@ export const Calculator = React.forwardRef((_props, ref) => {
                                             className='flex justify-end pt-2 items-center'
                                         >
                                             <Button
+                                                variant='text'
                                                 className='mx-3'
                                                 color='secondary'
-                                                variant='text'
                                                 onClick={currencyExchange.refetch}
                                             >
-                                                Recalculate
+                                                Recalcular
                                             </Button>
                                             <WhatsappButton
-                                                phoneNumber='41772241120'
+                                                phoneNumber={contactNumber}
                                                 disabled={!exchangeRateDate || (from.amount ?? 0) < 100}
                                                 message={`¡Hola buenas!\nQuiero cambiar *${getUsaFormat(from.amount!)} ${fromCode}*.\nA tipo de cambio *${getUsaFormat(exchangeRate)} ${fromCode}/${to.code}*.\n(actualizado el _${exchangeRateDate.toLocaleString()}_).`}
                                             >
-                                                Contact Us
+                                                Contactanos
                                                 <WhatsAppIcon fontSize='small' className='ml-1' />
                                             </WhatsappButton>
                                         </Grid>

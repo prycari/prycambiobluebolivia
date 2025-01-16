@@ -15,7 +15,7 @@ function Copyright() {
     return (
         <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
             {'Copyright © '}
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="#copyright">
                 CambioBlueBolivia
             </Link>
             &nbsp;
@@ -44,13 +44,13 @@ export function Footer() {
                 }}
             >
                 <div>
-                    <Link color="text.secondary" variant="body2" href="#">
+                    <Link color="text.secondary" variant="body2" href="#privacypolicy">
                         Privacy Policy
                     </Link>
                     <Typography sx={{ display: 'inline', mx: 0.5, opacity: 0.5 }}>
                         &nbsp;•&nbsp;
                     </Typography>
-                    <Link color="text.secondary" variant="body2" href="#">
+                    <Link color="text.secondary" variant="body2" href="#termsofservice">
                         Terms of Service
                     </Link>
                     <Copyright />
