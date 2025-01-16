@@ -10,7 +10,7 @@ import { currencies, CurrencyCode } from 'src/components/selectCurrency/Currency
 export const initialCurrencyExchangeState: CurrencyExchange = {
     from: {
         amount: 1000,
-        ...currencies.EUR,
+        ...currencies.CHF,
     },
     to: {
         ...currencies.BOB,
