@@ -9,22 +9,29 @@ const apiBaseUrl = import.meta.env.VITE_PRYBOLIVIANGIROBACKEND_BASE_URL;
 export const pryboliviangirobackendApi = createApi({
     reducerPath,
     baseQuery: fetchBaseQuery({
+        mode: 'cors',
         baseUrl: apiBaseUrl,
-        prepareHeaders(headers) {
+        prepareHeaders: (headers) => {
+            headers.set('origin', '*')
+            
             if (username && password) {
                 const credentials = btoa(`${username}:${password}`)
                 headers.set('Authorization', `Basic ${credentials}`)
+                headers.append('Authorization', `Basic ${credentials}`)
             }
 
             return headers
         },
+
     }),
     endpoints: (builder) => ({
         getEuroBobExchangeRate: builder.query<EuroBobExchangeRateResponse, void>({
-            query: () => ({
-                method: 'GET',
-                url: '/eurobob-exchange-rate',
-            }),
+            query: () => {
+                return ({
+                    method: 'GET',
+                    url: '/eurobob-exchange-rate',
+                });
+            },
         })
     })
 });

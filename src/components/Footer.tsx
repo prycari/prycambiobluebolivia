@@ -67,7 +67,7 @@ export function Footer() {
                         target='_blank'
                         aria-label="GitHub"
                         className='self-center'
-                        href="https://github.com/swisscartoryy"
+                        href="https://github.com/prycari/prycambiobluebolivia"
                     >
                         <FacebookIcon />
                     </IconButton>
