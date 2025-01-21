@@ -14,7 +14,6 @@ export default function App(props: { disableCustomTheme?: boolean }) {
         <CssBaseline enableColorScheme />
         <AppAppBar />
         <Calculator />
-        <br />
         <Footer />
       </StoreProvider>
     </AppTheme>
