@@ -2,9 +2,12 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { EuroBobExchangeRateResponse } from "src/components/calculator/dtos/EurobobExchangeRateResponse";
 
 const reducerPath = 'pryboliviangirobackendApi';
-const username = import.meta.env.VITE_BASIC_AUTH_PASS;
-const password = import.meta.env.VITE_BASIC_AUTH_USER;
-const apiBaseUrl = import.meta.env.VITE_PRYBOLIVIANGIROBACKEND_BASE_URL;
+
+const username = import.meta.env.VITE_BASIC_AUTH_USER;
+const password = import.meta.env.VITE_BASIC_AUTH_PASS;
+
+const originUrl = import.meta.env.VITE_ORIGIN;
+const apiBaseUrl = import.meta.env.VITE_PRYCAMBIOBLUEBOLIVIA_BASE_URL;
 
 export const pryboliviangirobackendApi = createApi({
     reducerPath,
@@ -12,12 +15,11 @@ export const pryboliviangirobackendApi = createApi({
         mode: 'cors',
         baseUrl: apiBaseUrl,
         prepareHeaders: (headers) => {
-            headers.set('origin', '*')
-            
+            headers.set('origin', originUrl)
+
             if (username && password) {
                 const credentials = btoa(`${username}:${password}`)
                 headers.set('Authorization', `Basic ${credentials}`)
-                headers.append('Authorization', `Basic ${credentials}`)
             }
 
             return headers
